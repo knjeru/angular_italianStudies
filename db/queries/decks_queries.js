@@ -17,8 +17,8 @@ module.exports = {
 
     addDeck: function(id, body) {
         return Decks()
-            .where('user', id)
             .insert({
+                user: id,
                 subject: body.subject
             })
     },
@@ -29,5 +29,11 @@ module.exports = {
             .update({
                 subject: body.subject
             })
+    },
+
+    deleteDeck: function(id) {
+        return Decks()
+            .where('id', id)
+            .del()
     }
 };

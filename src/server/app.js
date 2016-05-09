@@ -5,12 +5,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt');
 
 
 // *** routes *** //
 var userApi = require('./routes/userApi.js');
+var deckApi = require('./routes/deckApi.js');
 
 
 // *** express instance *** //
@@ -29,6 +28,8 @@ app.get('/', function(req,res,next) {
     res.sendFile(path.join(__dirname, '../client/app', 'index.html'));
 });
 app.use('/api/users', userApi);
+app.use('/api/decks', deckApi);
+
 
 
 // catch 404 and forward to error handler
