@@ -10,6 +10,8 @@ var bodyParser = require('body-parser');
 // *** routes *** //
 var userApi = require('./routes/userApi.js');
 var deckApi = require('./routes/deckApi.js');
+var cardApi = require('./routes/cardApi.js');
+
 
 
 // *** express instance *** //
@@ -29,6 +31,8 @@ app.get('/', function(req,res,next) {
 });
 app.use('/api/users', userApi);
 app.use('/api/decks', deckApi);
+app.use('/api/cards', cardApi);
+
 
 
 

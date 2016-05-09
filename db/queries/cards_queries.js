@@ -6,37 +6,38 @@ function Cards(){
 
 module.exports = {
 
-    getCards: function(id) {
+    getCards: function(deck_id) {
         return Cards()
-            .where('deck', id);
+            .where('deck', deck_id);
     },
 
     getCard: function(id) {
         return Cards()
-            .where('deck', id);
+            .where('id', id);
     },
 
     addCard: function(deck_id, body) {
         return Cards()
-            .where('deck', id)
             .insert({
+                deck: deck_id,
                 created_by: body.created_by,
                 question: body.question,
                 answer: body.answer
             })
     },
 
-    updateCard: function(deck_id, body) {
+    updateCard: function(card_id, body) {
         return Cards()
-            .where('id', id)
+            .where('id', card_id)
             .update({
-
+                question: body.question,
+                answer: body.answer
             })
     },
 
-    answerCard: function(deck_id, body) {
+    answerCard: function(card_id, body) {
         return Cards()
-            .where('deck', deck_id)
+            .where('id', card_id)
             .update({
                 correct_answer: body.correct_answer,
                 incorrect_answer: body.incorrect_answer,
@@ -44,9 +45,9 @@ module.exports = {
             })
     },
 
-    deleteCard: function(deck_id, body) {
+    deleteCard: function(card_id, body) {
         return Cards()
-            .where('deck', deck_id)
+            .where('deck', card_id)
             .del()
     }
 }
