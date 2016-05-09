@@ -6,6 +6,10 @@ function Users() {
 
 module.exports = {
 
+    getUsers: function() {
+        return Users()
+    },
+
     getUser: function(id) {
         return Users()
             .where('id', id);
