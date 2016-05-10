@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.decks')
+        .module('app.deck-hub')
         .config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];

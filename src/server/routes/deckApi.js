@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Decks = require('../../../db/queries/decks_queries');
+var Decks = require('../../../db/queries/decks.queries');
 
 router.get('/', function(req,res,next) {
     Decks.getDecks()
@@ -25,7 +25,7 @@ router.get('/:id', function(req,res,next) {
 router.post('/:user_id', function(req,res,next) {
     Decks.addDeck(req.params.user_id, req.body)
         .then(function(data) {
-            res.json('success');
+            res.json('success', data);
         })
         .catch(function(err) {
             res.json(err)

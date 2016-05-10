@@ -21,6 +21,8 @@ module.exports = {
                 user: id,
                 subject: body.subject
             })
+            .returning('id')
+            .into('decks');
     },
 
     updateDeck: function(id, body) {

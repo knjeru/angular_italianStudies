@@ -1,0 +1,14 @@
+<div>
+    <form ng-submit="vm.login()">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" ng-model="vm.email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="vm.password">
+        </div>
+        <button type="submit" name="button">Login</button>
+    </form>
+    <button ng-click="vm.logout()">Logout</button>
+</div>

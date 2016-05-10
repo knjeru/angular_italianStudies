@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Cards = require('../../../db/queries/cards_queries');
+var Cards = require('../../../db/queries/cards.queries');
 
 router.get('/:deck_id', function(req,res,next) {
     Cards.getCards(req.params.deck_id)

@@ -3,9 +3,10 @@
 
     angular
         .module('app', [
-            app.dashboard,
+            app.dash,
             app.auth,
             app.study-center,
-            app.deck-creation
+            app.deck-hub,
+            app.nav-footer
         ])
 })();

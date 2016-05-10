@@ -3,26 +3,30 @@
     'use strict';
 
     angular
-        .module('app.auth')
+        .module('app.dashboard')
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
+    config.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    function config($stateProvider,$urlRouterProvider, $httpProvider) {
+    function config($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('login', {
-                url: '/login',
-                templateUrl: '/app/auth/views/login.html',
-                controller: 'AuthCtrl',
-                controllerAs: 'vm'
-            })
-            .state('register', {
-                url: '/',
-                templateUrl: '/app/auth/views/register.html',
-                controller: 'AuthCtrl',
+            .state('dashboard', {
+                url: '/home',
+                views: {
+                    '': {
+                        templateUrl: '/app/dashboard/views/main.html'
+                    },
+                    'mydecks@home': {
+                        templateUrl: '/app/dashboard/views/decks.html'
+                    },
+                    'notifications@home': {
+                        templateUrl: '/app/dashboard/views/notifications.html'
+                    }
+                },
+                controller: 'DashCtrl',
                 controllerAs: 'vm'
             });
 
