@@ -43,7 +43,7 @@ router.put('/:deck_id', function(req,res,next) {
 });
 
 router.delete('/:id', function(req,res,next) {
-    Deck.deleteDeck(req.params.id)
+    Decks.deleteDeck(req.params.id)
         .then(function(data) {
             res.status(200)
         })
