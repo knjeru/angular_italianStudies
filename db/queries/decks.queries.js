@@ -19,7 +19,8 @@ module.exports = {
         return Decks()
             .insert({
                 user: id,
-                subject: body.subject
+                subject: body.subject,
+                deck_cover: body.deck_cover
             })
             .returning('id')
             .into('decks');
@@ -29,7 +30,8 @@ module.exports = {
         return Decks()
             .where('id', id)
             .update({
-                subject: body.subject
+                subject: body.subject,
+                deck_cover: body.deck_cover
             })
     },
 

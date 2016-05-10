@@ -14,5 +14,4 @@
             templateUrl: '/app/dashboard/views/deck.html'
         }
     }
-
 })();

@@ -35,7 +35,10 @@ router.post('/:user_id', function(req,res,next) {
 router.put('/:deck_id', function(req,res,next) {
     Decks.updateDeck(req.params.deck_id, req.body)
         .then(function(data) {
-            res.status(200);
+            res.json({
+                status: 200,
+                message: 'edited!'
+            })
         })
         .catch(function(err) {
             res.json(err)
@@ -45,7 +48,10 @@ router.put('/:deck_id', function(req,res,next) {
 router.delete('/:id', function(req,res,next) {
     Decks.deleteDeck(req.params.id)
         .then(function(data) {
-            res.status(200)
+            res.json({
+                status: 200,
+                message: 'deleted!'
+            })
         })
         .catch(function(err) {
             res.json(err)
