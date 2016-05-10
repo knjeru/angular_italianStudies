@@ -1,10 +1,12 @@
 <section class="deckwrap">
     <section class="mainview">
-        <article class="dashcreatedeck">
-            <i class="fa fa-plus-circle half" aria-hidden="true"></i>
-            <h2>Create A Deck</h2>
-        </article>
-        <section ui-view="mydecks" class="deckview"></section>
+        <!--<article class="dashcreatedeck">-->
+            <!--<i class="fa fa-plus-circle half" aria-hidden="true"></i>-->
+            <!--<h2 class="half">Create A Deck</h2>-->
+        <!--</article>-->
+        <h5>My Decks</h5>
+        <hr>
+        <section ui-view="mydecks" class="deckview" ng-repeat="deck in vm.userDecks"></section>
     </section>
     <section ui-view="notifications" class="notifview"></section>
 </section>

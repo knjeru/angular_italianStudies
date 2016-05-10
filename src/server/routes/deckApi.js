@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Decks = require('../../../db/queries/decks.queries');
 
-router.get('/', function(req,res,next) {
-    Decks.getDecks()
+router.get('/:user_id', function(req,res,next) {
+    Decks.getDecks(req.params.user_id)
         .then(function(data) {
             res.json(data);
         })
@@ -12,7 +12,7 @@ router.get('/', function(req,res,next) {
         })
 });
 
-router.get('/:id', function(req,res,next) {
+router.get('/deck/:id', function(req,res,next) {
     Decks.getDeck(req.params.id)
         .then(function(data) {
             res.json(data);

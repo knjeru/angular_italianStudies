@@ -6,8 +6,10 @@ function Decks() {
 
 module.exports = {
 
-    getDecks: function() {
+    getDecks: function(id) {
+        console.log(id);
         return Decks()
+            .where('user', id);
     },
 
     getDeck: function(id) {

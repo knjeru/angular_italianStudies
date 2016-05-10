@@ -20,7 +20,7 @@
         }
 
         function successAuth(res) {
-            $localStorage.val = res.id;
+            $localStorage.val = res.data;
             $localStorage.token = res.token;
             $location.url('/home');
         }

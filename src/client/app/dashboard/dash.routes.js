@@ -17,7 +17,9 @@
                 url: '/home',
                 views: {
                     '': {
-                        templateUrl: '/app/dashboard/views/main.html'
+                        templateUrl: '/app/dashboard/views/main.html',
+                        controller: 'DashCtrl',
+                        controllerAs: 'vm'
                     },
                     'mydecks@dashboard': {
                         templateUrl: '/app/dashboard/views/user-decks.html'
@@ -26,8 +28,6 @@
                         templateUrl: '/app/dashboard/views/notifications.html'
                     }
                 },
-                controller: 'DashCtrl',
-                controllerAs: 'vm',
                 css: '/styles/css/dashboard.css'
             });
 

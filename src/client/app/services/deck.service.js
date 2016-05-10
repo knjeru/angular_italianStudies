@@ -11,14 +11,14 @@
     function DeckService($http) {
 
         var urlBase = '/api/decks';
-        var deckApi = {}
+        var deckApi = {};
 
-        deckApi.getDecks = function() {
-            return $http.get(urlBase);
+        deckApi.getDecks = function(id) {
+            return $http.get(urlBase + '/' + id);
         };
 
         deckApi.getDeck = function(deck_id) {
-            return $http.get(urlBase + '/' + deck_id);
+            return $http.get(urlBase + '/deck/' + deck_id);
         };
 
         deckApi.addDeck = function(user_id, body) {

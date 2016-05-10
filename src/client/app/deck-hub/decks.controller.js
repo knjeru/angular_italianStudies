@@ -10,11 +10,11 @@
 
     function NewDeckCtrl (DeckService, CardService ,$stateParams, $localStorage) {
 
-        var userId = $localStorage.getItem('UUID');
+        var uid = $localStorage.getItem('val');
         vm.deckFormData =
 
         vm.addDeck = function() {
-            DeckService.addDeck(userId, vm.deckFormData)
+            DeckService.addDeck(uid, vm.deckFormData)
                 .then(function(data) {
                     CardService.addCard(data.id, vm.cardFormData)
                 })
