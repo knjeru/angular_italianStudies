@@ -3,12 +3,12 @@
     'use strict';
 
     angular
-        .module('app.dashboard')
+        .module('app.dash')
         .config(config);
 
-    config.$inject = ['$stateProvider','$urlRouterProvider'];
+    config.$inject = ['$stateProvider','$urlRouterProvider', '$httpProvider'];
 
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, $httpProvider) {
 
         $urlRouterProvider.otherwise('/');
 

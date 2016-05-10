@@ -3,17 +3,17 @@
     'use strict';
 
     angular
-        .module('nav-footer')
-        .directive('NavBar', NavBar)
+        .module('app.nav-footer')
+        .directive('navBar', navBar)
         .controller('NavCtrl', NavCtrl);
 
-    NavBar.$inject = [];
+    navBar.$inject = [];
     NavCtrl.$inject = [];
 
-    function NavBar() {
+    function navBar() {
         return {
             restrict: 'E',
-            templateUrl: '/app/nav-footer/views/nav.html',
+            templateUrl: '/app/nav-footer/views/nav.html'
             // controller: 'NavCtrl',
             // controllerAs: 'vm',
             // css: '/styles/css/navbar.css'

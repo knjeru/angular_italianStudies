@@ -2,5 +2,5 @@
     'use strict'
 
     angular
-        .module('')
+        .module('app.study-center')
 })();

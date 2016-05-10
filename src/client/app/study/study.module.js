@@ -3,8 +3,9 @@
     'use strict';
 
     angular
-        .module('app.study', [
+        .module('app.study-center', [
             'ui.router',
-            'door3.css'
+            'door3.css',
+            'ngStorage'
         ])
 })();

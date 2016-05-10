@@ -5,6 +5,7 @@
     angular
         .module('app.deck-hub', [
             'ui.router',
-            'door3.css'
+            'door3.css',
+            'ngStorage'
         ])
 })();

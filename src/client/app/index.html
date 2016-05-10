@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Italian Studies</title>
@@ -7,7 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.7/angular-css.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/styles/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.js"></script>
+    <!--<link rel="stylesheet" href="/styles/css/main.css">-->
     <link rel="stylesheet" ng-href="{{css}}">
   </head>
   <body>
@@ -17,8 +18,6 @@
 
     </div>
     <script src="/app/app.js" charset="utf-8"></script>
-    <script src="/app/nav-footer/nav-footer.module.js" charset="utf-8"></script>
-    <script src="/app/nav-footer/nav.directive.js" charset="utf-8"></script>
     <script src="/app/services/deck.service.js" charset="utf-8"></script>
     <script src="/app/services/card.service.js" charset="utf-8"></script>
     <script src="/app/services/user.service.js" charset="utf-8"></script>
@@ -26,9 +25,16 @@
     <script src="/app/auth/auth.module.js" charset="utf-8"></script>
     <script src="/app/auth/auth.controller.js" charset="utf-8"></script>
     <script src="/app/auth/auth.routes.js" charset="utf-8"></script>
+    <script src="/app/nav-footer/nav-footer.module.js" charset="utf-8"></script>
+    <script src="/app/nav-footer/nav.directive.js" charset="utf-8"></script>
     <script src="/app/dashboard/dash.module.js" charset="utf-8"></script>
-    <script src="/app/dashboard/dash.service.js" charset="utf-8"></script>
     <script src="/app/dashboard/dash.controller.js" charset="utf-8"></script>
     <script src="/app/dashboard/dash.routes.js" charset="utf-8"></script>
+    <script src="/app/deck-hub/decks.module.js" charset="utf-8"></script>
+    <script src="/app/deck-hub/decks.controller.js" charset="utf-8"></script>
+    <script src="/app/deck-hub/decks.routes.js" charset="utf-8"></script>
+    <script src="/app/study/study.module.js" charset="utf-8"></script>
+    <script src="/app/study/study.controller.js" charset="utf-8"></script>
+    <script src="/app/study/study.routes.js" charset="utf-8"></script>
   </body>
 </html>
