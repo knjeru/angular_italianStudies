@@ -1,5 +1,10 @@
-<div>
-  <p>Main Component</p>
-  <section ui-view="mydecks" class="half"></section>
-  <section ui-view="notifications" class="half"></section>
-</div>
+<section class="deckwrap">
+    <section class="mainview">
+        <article class="dashcreatedeck">
+            <i class="fa fa-plus-circle half" aria-hidden="true"></i>
+            <h2>Create A Deck</h2>
+        </article>
+        <section ui-view="mydecks" class="deckview"></section>
+    </section>
+    <section ui-view="notifications" class="notifview"></section>
+</section>

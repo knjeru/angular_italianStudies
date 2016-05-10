@@ -19,35 +19,36 @@
                     '': {
                         templateUrl: '/app/dashboard/views/main.html'
                     },
-                    'mydecks@home': {
-                        templateUrl: '/app/dashboard/views/decks.html'
+                    'mydecks@dashboard': {
+                        templateUrl: '/app/dashboard/views/user-decks.html'
                     },
-                    'notifications@home': {
+                    'notifications@dashboard': {
                         templateUrl: '/app/dashboard/views/notifications.html'
                     }
                 },
                 controller: 'DashCtrl',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                css: '/styles/css/dashboard.css'
             });
 
-        $httpProvider
-            .interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {
-
-            return {
-                'request': function (config) {
-                    config.headers = config.headers || {};
-                    if ($localStorage.token) {
-                        config.headers['x-access-token'] = $localStorage.token;
-                    }
-                    return config;
-                },
-                'responseError': function (response) {
-                    if (response.status === 401 || response.status === 403) {
-                        $location.path('/login');
-                    }
-                    return $q.reject(response);
-                }
-            };
-        }]);
+        // $httpProvider
+        //     .interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {
+        //
+        //     return {
+        //         'request': function (config) {
+        //             config.headers = config.headers || {};
+        //             if ($localStorage.token) {
+        //                 config.headers['x-access-token'] = $localStorage.token;
+        //             }
+        //             return config;
+        //         },
+        //         'responseError': function (response) {
+        //             if (response.status === 401 || response.status === 403) {
+        //                 $location.path('/login');
+        //             }
+        //             return $q.reject(response);
+        //         }
+        //     };
+        // }]);
     }
 })();

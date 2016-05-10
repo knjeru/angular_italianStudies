@@ -13,10 +13,8 @@
     function navBar() {
         return {
             restrict: 'E',
-            templateUrl: '/app/nav-footer/views/nav.html'
-            // controller: 'NavCtrl',
-            // controllerAs: 'vm',
-            // css: '/styles/css/navbar.css'
+            templateUrl: '/app/nav-footer/views/nav.html',
+            css: '/styles/css/nav.css'
         }
     }
 

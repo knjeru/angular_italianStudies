@@ -16,13 +16,13 @@
     function AuthCtrl ($rootScope, $location, $localStorage, Auth) {
 
         if ($localStorage.token) {
-            $location.url('/');
+            $location.url('/home');
         }
 
         function successAuth(res) {
             $localStorage.val = res.id;
             $localStorage.token = res.token;
-            $location.url('/');
+            $location.url('/home');
         }
 
         var vm = this;
