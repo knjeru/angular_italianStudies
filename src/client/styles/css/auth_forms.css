@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.auth_form {
+  display: block;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%; }
+  .auth_form::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .auth_form:last-child {
+    margin-right: 0; }
