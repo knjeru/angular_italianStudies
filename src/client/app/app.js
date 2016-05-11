@@ -1,5 +1,12 @@
-'use strict';
+(function() {
+    'use strict';
 
-
-// name your angular app here
-angular.module('myApp', [])
+    angular
+        .module('app', [
+            'app.dash',
+            'app.auth',
+            'app.study-center',
+            'app.deck-hub',
+            'app.nav-footer'
+        ])
+})();

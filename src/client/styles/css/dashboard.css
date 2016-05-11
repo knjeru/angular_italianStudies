@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.deckwrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .deckwrap::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .deckwrap:last-child {
+    margin-right: 0; }
+  .deckwrap .mainview {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .deckwrap .mainview::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .deckwrap .mainview:last-child {
+      margin-right: 0; }
+    .deckwrap .mainview .dashcreatedeck {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .deckwrap .mainview .dashcreatedeck:last-child {
+        margin-right: 0; }
+      .deckwrap .mainview .dashcreatedeck .half {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%; }
+        .deckwrap .mainview .dashcreatedeck .half:last-child {
+          margin-right: 0; }
+    .deckwrap .mainview .deckview {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .deckwrap .mainview .deckview:last-child {
+        margin-right: 0; }
+  .deckwrap .notifview {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .deckwrap .notifview:last-child {
+      margin-right: 0; }

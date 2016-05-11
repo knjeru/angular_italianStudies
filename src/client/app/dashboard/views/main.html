@@ -1,0 +1,8 @@
+<section class="deckwrap">
+    <section class="mainview">
+        <h5>My Decks</h5>
+        <hr>
+        <section ui-view="mydecks" class="deckview" ng-repeat="deck in vm.userDecks"></section>
+    </section>
+    <section ui-view="notifications" class="notifview"></section>
+</section>

@@ -1,0 +1,29 @@
+@import "bourbon";
+@import "neat";
+
+.deckwrap {
+  @include outer-container();
+  @include span-columns(12);
+
+  .mainview {
+    @include outer-container();
+    @include span-columns(8);
+
+    .dashcreatedeck {
+      @include span-columns(12);
+
+      .half {
+        @include span-columns(6);
+      }
+    }
+
+    .deckview {
+      @include span-columns(12);
+    }
+  }
+
+  .notifview {
+    @include span-columns(4 of 12);
+  }
+}
+

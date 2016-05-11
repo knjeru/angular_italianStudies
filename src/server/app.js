@@ -6,12 +6,46 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt');
+var protectApi = express.Router();
 
 
 // *** routes *** //
-var routes = require('./routes/index.js');
+var userApi = require('./routes/userApi.js');
+var deckApi = require('./routes/deckApi.js');
+var cardApi = require('./routes/cardApi.js');
+var auth = require('./routes/authorization');
 
+// *** JWT Middleware to protect API *** //
+protectApi.use(function(req, res, next) {
+
+  // check header or url parameters or post parameters for token
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+  // decode token
+  if (token) {
+
+    // verifies secret and checks exp
+    jwt.verify(token, 'superSecret', function(err, decoded) {
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;
+        next();
+      }
+    });
+
+  } else {
+
+    // if there is no token
+    // return an error
+    return res.status(403).send({
+      success: false,
+      message: 'No token provided.'
+    });
+
+  }
+});
 
 // *** express instance *** //
 var app = express();
@@ -28,7 +62,13 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.get('/', function(req,res,next) {
     res.sendFile(path.join(__dirname, '../client/app', 'index.html'));
 });
-app.use('/', routes);
+app.use('/auth', auth);
+app.use('/api', protectApi);
+app.use('/api/users', userApi);
+app.use('/api/decks', deckApi);
+app.use('/api/cards', cardApi);
+
+
 
 
 // catch 404 and forward to error handler

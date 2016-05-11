@@ -1,0 +1,10 @@
+<div>
+  <form class="form" ng-submit="vm.addDeck()">
+    <label>Subject</label>
+    <input type="text" ng-model="vm.deckFormData.subject"/>
+    <label>Add a deck cover</label>
+    <input type="text" ng-model="vm.deckFormData.deck_cover"/>
+    <div ui-view="cards"></div>
+    <button type="submit">Add Deck</button>
+  </form>
+</div>
