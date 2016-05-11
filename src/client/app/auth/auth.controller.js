@@ -33,8 +33,6 @@
             $rootScope.user = false;
         }
 
-        console.log($localStorage.token + ' current user status: ' + $rootScope.user);
-
         vm.login = function () {
             var formData = {
                 email: vm.email,

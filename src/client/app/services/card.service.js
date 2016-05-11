@@ -4,11 +4,11 @@
 
     angular
         .module('app')
-        .factory('CardServices', CardServices);
+        .factory('CardService', CardService);
 
-    CardServices.$inject = ['$inject'];
+    CardService.$inject = ['$http'];
 
-    function CardServices($http) {
+    function CardService($http) {
         var urlBase = '/api/cards';
         var cardApi = {};
 
@@ -38,5 +38,4 @@
 
         return cardApi;
     }
-
 })();

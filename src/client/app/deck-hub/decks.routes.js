@@ -16,14 +16,15 @@
                 url: '/newdeck',
                 views: {
                     '': {
-                        templateUrl: '/app/deck-hub/views/form_deck.html'
+                        templateUrl: '/app/deck-hub/views/form_deck.html',
+                        controller: 'NewDeckCtrl',
+                        controllerAs: 'vm'
                     },
                     'cards@newDeck': {
                         templateUrl: '/app/deck-hub/views/form_card.html'
                     }
                 },
-                controller: 'NewDeckCtrl',
-                controllerAs: 'vm'
+                css: '/styles/css/deck_forms.css'
             });
 
         $httpProvider

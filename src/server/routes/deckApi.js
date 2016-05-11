@@ -25,7 +25,10 @@ router.get('/deck/:id', function(req,res,next) {
 router.post('/:user_id', function(req,res,next) {
     Decks.addDeck(req.params.user_id, req.body)
         .then(function(data) {
-            res.json('success', data);
+            res.json({
+                status: 'success',
+                id: data
+            });
         })
         .catch(function(err) {
             res.json(err)
